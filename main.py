@@ -9,10 +9,14 @@ def main():
     # print(f"Screen width: {SCREEN_WIDTH}")
     # print(f"Screen height: {SCREEN_HEIGHT}")
     pygame.init()
+    pyClock = pygame.time.Clock()
+    dt = 0
     #test = pygame.display
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     #test.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     
+
+
     # game loop
     while True:
         #code copy for quite
@@ -23,6 +27,9 @@ def main():
         screen.fill((255,255,255)) 
         pygame.display.flip
         # test.flip
+
+        #Tick
+        dt = pyClock.tick(60) / 1000
 
     pass
 
