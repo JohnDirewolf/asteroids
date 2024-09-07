@@ -3,6 +3,7 @@
 # throughout this file
 import pygame
 from constants import *
+from player import *
 
 def main():
     # print("Starting asteroids!")
@@ -15,7 +16,9 @@ def main():
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     #test.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     
-
+    #Initiate Player Sprite
+    player_ship = Player((SCREEN_WIDTH / 2), (SCREEN_HEIGHT / 2))
+    player_ship.draw(screen)
 
     # game loop
     while True:
@@ -24,8 +27,13 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
-        screen.fill((255,255,255)) 
-        pygame.display.flip
+        # fill screen with black
+        screen.fill("black") 
+
+        # render player ship
+        player_ship.draw(screen)
+
+        pygame.display.flip()
         # test.flip
 
         #Tick
