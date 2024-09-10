@@ -34,7 +34,7 @@ class Player (CircleShape):
         pass
 
     def shoot(self):
-        print(self.shot_timer)
+        # print(self.shot_timer)
         if self.shot_timer > 0:
             return
         shot = Shot(self.position.x, self.position.y)
