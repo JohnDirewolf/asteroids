@@ -22,13 +22,16 @@ def main():
 
     # game loop
     while True:
-        #code copy for quite
+        #code copy for quit
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
 
         # fill screen with black
         screen.fill("black") 
+
+        #Check for keypress to move player ship
+        player_ship.update(dt)
 
         # render player ship
         player_ship.draw(screen)
