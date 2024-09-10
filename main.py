@@ -15,6 +15,10 @@ def main():
     #test = pygame.display
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
     #test.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    #Create Groups
+    updatable = pygame.sprite.Group()
+    drawable = pygame.sprite.Group()
+    Player.containers = (updatable, drawable)
     
     #Initiate Player Sprite
     player_ship = Player((SCREEN_WIDTH / 2), (SCREEN_HEIGHT / 2))
@@ -30,11 +34,13 @@ def main():
         # fill screen with black
         screen.fill("black") 
 
-        #Check for keypress to move player ship
-        player_ship.update(dt)
+        for thing in updatable:
+            #Things in updatable: Player is updated with movement
+            thing.update(dt)
 
-        # render player ship
-        player_ship.draw(screen)
+        for thing in drawable:
+            #Thins in drawable: Player is updated with movement
+            thing.draw(screen)
 
         pygame.display.flip()
         # test.flip
