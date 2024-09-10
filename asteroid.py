@@ -8,7 +8,7 @@ class Asteroid(CircleShape):
         pass
 
     def draw(self, screen):
-        pygame.draw.circle(screen, "red", self.position, self.radius) 
+        pygame.draw.circle(screen, "darkgrey", self.position, self.radius) 
         pass
 
     def update(self, dt):
